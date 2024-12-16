@@ -1,6 +1,7 @@
 name: nel
 description: A server app using the shelf package and Docker.
 version: 1.0.0
+publish_to: "http://localhost:8080"
 # repository: https://github.com/my_org/my_repo
 
 environment:
@@ -12,6 +13,7 @@ dependencies:
   shelf_router: ^1.1.4
   shelf_multipart: ^2.0.0
   uuid: ^4.5.1
+  azblob: ^4.0.0
 #  random:
 #    hosted: "http://localhost:8080"
 #    version:
