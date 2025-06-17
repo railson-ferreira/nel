@@ -1,4 +1,5 @@
 import 'package:nel/debug_req.dart';
+import 'package:nel/handlers/archives/%5Bfilename%5D.dart';
 import 'package:nel/handlers/echo_handler.dart';
 import 'package:nel/handlers/packages/[package].dart';
 import 'package:nel/handlers/packages/versions/new.dart';
@@ -21,4 +22,5 @@ final router = Router(
   ..get("/api/packages/versions/new", packagesVersionsNew)
   ..post("/api/packages/versions/upload/<id>", packagesVersionsUpload_)
   ..get("/api/packages/versions/upload/<id>/finalize", packagesVersionsUpload_Finalize)
-  ..get("/api/packages/<package>", packages_);
+  ..get("/api/packages/<package>", packages_)
+  ..get("/api/archives/<filename>", archives_);

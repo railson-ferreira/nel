@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:nel/debug_req.dart';
+import 'package:nel/globals.dart';
 import 'package:nel/helpers/tar_gz_helper.dart';
 import 'package:nel/services/azure_blob_package_repository.dart';
 import 'package:nel/services/local_file_system_package_repository.dart';
@@ -9,7 +10,6 @@ import 'package:nel/utils/yaml_utils.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
-final PackageRepository packageRepository = LocalFileSystemPackageRepository();
 
 Future<Response> packagesVersionsUpload_Finalize(Request request) async {
   final id = request.params["id"];

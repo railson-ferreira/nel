@@ -1,3 +1,5 @@
+import 'package:yaml/yaml.dart';
+
 class PubspecYamlUtils{
   static String? getName(String content){
     final lines = content.split('\n');
@@ -21,5 +23,16 @@ class PubspecYamlUtils{
       }
     }
     return null;
+  }
+  static Object? convertYamlToMap(Object? yaml) {
+    if (yaml is YamlMap) {
+      return Map.fromEntries(
+        yaml.entries.map((e) => MapEntry(e.key, convertYamlToMap(e.value))),
+      );
+    } else if (yaml is YamlList) {
+      return yaml.map(convertYamlToMap).toList();
+    } else {
+      return yaml;
+    }
   }
 }
